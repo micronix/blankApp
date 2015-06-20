@@ -19,8 +19,11 @@ class HostsController < ApplicationController
     else
       @host = Host.find params[:id]
       @host.script = params[:host][:script]
-      @host.save
-      redirect_to action: :show, token: params[:token]
+      if @host.save
+        redirect_to action: :show, token: params[:token]
+      else
+        render action: :show
+      end
     end
   end
 end
