@@ -11,28 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613155635) do
-
-  create_table "api_v1_comments", force: :cascade do |t|
-    t.string   "user"
-    t.integer  "site_id"
-    t.string   "type"
-    t.string   "memo"
-    t.string   "alternatives"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "api_v1_comments", ["site_id"], name: "index_api_v1_comments_on_site_id"
-
-  create_table "api_v1_sites", force: :cascade do |t|
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20150620163733) do
 
   create_table "hosts", force: :cascade do |t|
-    t.string "url", null: false
+    t.string "url",    null: false
+    t.text   "script"
   end
 
   create_table "issues", force: :cascade do |t|
