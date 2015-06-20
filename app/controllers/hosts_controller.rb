@@ -33,9 +33,9 @@ class HostsController < ApplicationController
     # find host
     host = Host.find_by(url: uri.host)
     if host
-      render text: host.script
+      render text: host.script, content_type: 'application/javascript'
     else
-      render text: ''
+      render text: '', content_type: 'applicatin/javascript'
     end
   end
 end
