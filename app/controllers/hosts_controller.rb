@@ -26,4 +26,16 @@ class HostsController < ApplicationController
       end
     end
   end
+
+  def fix
+    uri = URI(params[:q])
+
+    # find host
+    host = Host.find_by(url: uri.host)
+    if host
+      render text: host.script
+    else
+      render text: ''
+    end
+  end
 end
