@@ -1,3 +1,4 @@
+
 <div class="parent"><div class="child" style="font-family: 'Arial'; color: #000;">
 <div class="row text-center"><h1>20 Million Americans are visually impaired.</h1></div>
 <div class="row text-center" style="padding-top: 30px; padding-bottom: 30px;">
@@ -5,9 +6,20 @@
 </div>
 <div class="row text-center"><h1>The internet can be a beautiful place, <br>for everyone.</h1></div>
 </div></div>
+
 <div class="text-right sig" style="padding: 20px; display: none;">
+
+  <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "btn btn-default" %>
+  <% else %>
+      <%= link_to "Login", new_user_session_path, :class => "btn btn-default" %>
+      <%= link_to "Signup", new_user_registration_path, :class => "btn btn-default" %>
+  <% end %>
+
   <button class="btn btn-default">Developers</button>
   <button class="btn btn-default">Businesses</button>
+
+  <p class="notice"><%= notice %> </p>
+  <p class="alert"><%= alert %> </p>
 </div>
 <div class="hos">&nbsp;</div>
-
