@@ -5,7 +5,7 @@ class HostsController < ApplicationController
     host_ids = Host.joins(:issues).group('hosts.id').count('issues.id')
     @hosts = Host.where(id: host_ids.keys)
     @hosts = @hosts.to_a.sort do |a,b|
-      host_ids[a.id] <=> host_ids[b.id]
+      host_ids[b.id] <=> host_ids[a.id]
     end
     @hosts = @hosts[0..9]
   end
