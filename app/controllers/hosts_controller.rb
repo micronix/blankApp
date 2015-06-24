@@ -2,7 +2,12 @@ class HostsController < ApplicationController
   TOKEN = 'jJcf97qGdz8WhMwB'
 
   def index
-    @hosts = Host.all
+    host_ids = Host.joins(:issues).group('hosts.id').count('issues.id')
+    @hosts = Host.where(id: host_ids.keys)
+    @hosts = @hosts.to_a.sort do |a,b|
+      host_ids[a.id] <=> host_ids[b.id]
+    end
+    @hosts = @hosts[0..9]
   end
 
   def show

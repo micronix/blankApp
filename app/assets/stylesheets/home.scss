@@ -1,15 +1,16 @@
-body {
+.home  {
   /*background-color: #000 !important;*/
   background-image: url('/try1.jpg');
   background-size:cover;
+  overflow: hidden;
 }
 
 .blank {
 }
 
 
-h1 {
-  color: #000;
+.home h1 {
+  color: #fff;
 }
 
 .hos {
@@ -29,6 +30,47 @@ h1 {
   top: 30%;
   left: 50%;
   transform: translate(-50%, 30%);
+}
+
+.titles {
+  font-size: 3em;
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+  font-weight: 500;
+  line-height: 1.1;
+  font-family: 'Nunito', sans-serif;
+  color: black;
+}
+
+.white {
+  color: #FFF;
+}
+
+.black {
+  color: #000;
+}
+
+.btn {
+  border-radius: 6px;
+}
+
+.btn-default:hover {
+  background-color: #4169E1;
+  color: #FFF;
+}
+
+.explanation {
+  font-size: 1.2em;
+  color: #000;
+  position: absolute;
+  left: 50px;
+  top: 80%;
+  display: none;
+  width: 800px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #FFF;
+  border-radius: 6px;
 }
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
@@ -69,3 +111,5 @@ input[type="checkbox"]:checked + div{
 label + input[type="checkbox"]:checked{
     background: white;
 }*/
+
+
