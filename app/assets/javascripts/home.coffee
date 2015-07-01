@@ -8,12 +8,12 @@ window.toggle = ->
   if blind
     blind = false
     $('.hos').fadeToggle(2000)
-    $('.explanation').fadeToggle(2000)
-    $('.titles').toggleClass('white', 2000)
+    setTimeout((-> $('.explanation').toggleClass('appear')), 50)
+    setTimeout((-> $('.titles').toggleClass('white')), 50)
     setTimeout((-> $('.sig').toggle()), 2000)
   else
     blind = true
-    $('.explanation').fadeToggle(2000)
-    $('.titles').toggleClass('white',2000)
+    setTimeout((-> $('.explanation').toggleClass('appear')),1000)
+    setTimeout((-> $('.titles').toggleClass('white')),1000)
     $('.sig').toggle()
     $('.hos').fadeToggle(1000)

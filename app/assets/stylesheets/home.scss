@@ -1,8 +1,11 @@
+html{
+  background-color: #000;
+}
+
 .home  {
-  /*background-color: #000 !important;*/
-  background-image: url('/try1.jpg');
+  background-image: url('/hawaii-sunset-PHOTO-BY-RICKY-LEUNG.JPG');
   background-size:cover;
-  overflow: hidden;
+  background-repeat:no-repeat;
 }
 
 .blank {
@@ -27,23 +30,33 @@
 }
 .child {
   position: absolute;
-  top: 30%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 30%);
+  transform: translate(-50%, 100px);
+  width:60%;
+  background-color: rgba(0,0,0,.6)
 }
 
 .titles {
-  font-size: 3em;
+  font-size: 2em;
   margin-top: 0.8em;
   margin-bottom: 1em;
   font-weight: 500;
   line-height: 1.1;
-  font-family: 'Nunito', sans-serif;
+  font-family: sans-serif;
   color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.row:first-child .titles{
+  margin-top:1.2em;
+  font-size:3em;
 }
 
 .white {
   color: #FFF;
+  text-shadow: 1px 1px #222;
 }
 
 .black {
@@ -52,6 +65,8 @@
 
 .btn {
   border-radius: 6px;
+  border: none;
+  /*box-shadow: 1px 1px .5px .5px #555;*/
 }
 
 .btn-default:hover {
@@ -59,19 +74,29 @@
   color: #FFF;
 }
 
-.explanation {
-  font-size: 1.2em;
-  color: #000;
-  position: absolute;
-  left: 50px;
-  top: 80%;
-  display: none;
-  width: 800px;
-  border: 1px solid black;
-  padding: 10px;
-  background-color: #FFF;
-  border-radius: 6px;
+.sig .btn{
+  margin-bottom:5px;
 }
+
+.explanation{
+  text-indent: -999999px;
+  padding-bottom:30px;
+  text-shadow: 1px 1px #222;
+}
+
+.explanation p{
+  font-size:14px;
+  padding-left:20px;
+  padding-right:20px;
+
+}
+
+.explanation.appear{
+  text-indent: 0px;
+  color:#fff;
+}
+
+
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -112,4 +137,35 @@ label + input[type="checkbox"]:checked{
     background: white;
 }*/
 
+// Tablets
+@media only screen and (min-width: 768px) and (max-width:985px){
+  .titles {
+    font-size: 1.8em;
+  }
 
+  .row:first-child .titles{
+    font-size:2.8em;
+  }
+}
+
+// Wide phones
+@media only screen and (min-width: 480px) and (max-width:767px){
+  .titles {
+    font-size: 1.6em;
+  }
+
+  .row:first-child .titles{
+    font-size:2.6em;
+  }
+}
+
+// Phones and smaller
+@media only screen and (max-width:479px){
+  .titles {
+    font-size: 1.4em;
+  }
+
+  .row:first-child .titles{
+    font-size:2em;
+  }
+}
