@@ -3,7 +3,7 @@ html{
 }
 
 .home  {
-  background-image: image-url('hawaii-sunset-PHOTO-BY-RICKY-LEUNG.JPG');
+  background-image: image-url('/hawaii-sunset-PHOTO-BY-RICKY-LEUNG.JPG');
   background-size:cover;
   background-repeat:no-repeat;
 }
@@ -33,6 +33,8 @@ html{
   top: 0;
   left: 50%;
   transform: translate(-50%, 100px);
+  -ms-transform: translate(-50%, 100px);
+  -webkit-transform: translate(-50%, 100px);
   width:60%;
   background-color: rgba(0,0,0,.6)
 }
@@ -64,18 +66,20 @@ html{
 }
 
 .btn {
-  border-radius: 6px;
-  border: none;
+  border-radius: 6px !important;
+  border: none !important;
   /*box-shadow: 1px 1px .5px .5px #555;*/
 }
 
-.btn-default:hover {
-  background-color: #4169E1;
-  color: #FFF;
+.btn-default:hover, .btn-default:active, .btn-default:focus {
+  background-color: #4169E1 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  color: #FFF !important;
 }
 
 .sig .btn{
-  margin-bottom:5px;
+  margin-bottom:5px !important;
 }
 
 .explanation{
