@@ -4,7 +4,6 @@
 
 blind = true
 window.toggle = ->
-  console.log blind
   if blind
     blind = false
     $('.hos').fadeToggle(2000)

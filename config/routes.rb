@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'home#index'
+  get 'instructions' => 'home#instructions'
 
   resources :issues
   resources :hosts
